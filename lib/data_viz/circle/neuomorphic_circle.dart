@@ -68,13 +68,14 @@ class NeuomorphicCircle extends StatelessWidget {
             : SizedBox.shrink(),
         (child != null) ? child : SizedBox.shrink(),
         Container(
-            width: 222,
-            height: 222,
+            width: 250,
+            height: 250,
             decoration: BoxDecoration(
-              color: backgroundColor,
               shape: BoxShape.circle,
             ),
-            child: Lottie.asset('assets/breath2.json', fit: BoxFit.fill)),
+            child: Lottie.asset(
+              'assets/breath3.json',
+            )),
       ]),
     );
   }

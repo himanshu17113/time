@@ -14,7 +14,7 @@ class ProgressRing extends StatelessWidget {
       return SizedBox.expand(
           child: CustomPaint(
               painter: RingPainter(
-                  strokeWidth: constraints.maxWidth * 0.14,
+                  strokeWidth: constraints.maxWidth * 0.12,
                   progress: progress)));
     });
   }
@@ -28,7 +28,7 @@ class RingPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final inset = size.width * 0.1;
+    final inset = size.width * 0.09;
     // print(inset);
     // print(size.width - inset);
     // print(size.height - inset);
