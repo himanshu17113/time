@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'circle_inner_highlight.dart';
 import 'circle_inner_shadow.dart';
 
@@ -26,25 +27,28 @@ class NeuomorphicCircle extends StatelessWidget {
     return SafeArea(
       child: Stack(alignment: Alignment.center, children: [
         Container(
-            // width: 50,
-            // height: 50,
-            decoration: BoxDecoration(
-                color: backgroundColor,
-                shape: BoxShape.circle,
-                boxShadow: (outerShadow)
-                    ? [
-                        BoxShadow(
-                            color: highlightColor,
-                            offset: Offset(-10, -10),
-                            blurRadius: 20,
-                            spreadRadius: 0),
-                        BoxShadow(
-                            color: shadowColor,
-                            offset: Offset(10, 10),
-                            blurRadius: 20,
-                            spreadRadius: 0)
-                      ]
-                    : null)),
+          // width: 50,
+          // height: 50,
+          decoration: BoxDecoration(
+              color: backgroundColor,
+              shape: BoxShape.circle,
+              boxShadow: (outerShadow)
+                  ? [
+                      BoxShadow(
+                          color: highlightColor,
+                          offset: Offset(-10, -10),
+                          blurRadius: 20,
+                          spreadRadius: 0),
+                      BoxShadow(
+                          color: shadowColor,
+                          offset: Offset(10, 10),
+                          blurRadius: 20,
+                          spreadRadius: 0)
+                    ]
+                  : null),
+          // width: 50,
+          // height: 50,
+        ),
         (innerShadow)
             ? ClipPath(
                 clipper: HighlightClipper(),
@@ -62,7 +66,15 @@ class NeuomorphicCircle extends StatelessWidget {
                 ),
               )
             : SizedBox.shrink(),
-        (child != null) ? child : SizedBox.shrink()
+        (child != null) ? child : SizedBox.shrink(),
+        Container(
+            width: 222,
+            height: 222,
+            decoration: BoxDecoration(
+              color: backgroundColor,
+              shape: BoxShape.circle,
+            ),
+            child: Lottie.asset('assets/breath2.json', fit: BoxFit.fill)),
       ]),
     );
   }
